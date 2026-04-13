@@ -197,10 +197,11 @@ int main(){
 	printf("\n      Qual opção você gostaria?\n\n\n\n      1.Repetir o Jogo      2.Voltar ao menu \n\n\n\n      ");  
     scanf("%d", &con);
     while(getchar() != '\n');
-    if((con !=1) || (con !=2))
+    if((con !=1) && (con !=2)){
 	printf("       Inválido, digite novamente\n\n\n\n");
     x=0;
     system("pause");
+	}else{
     if(con == 1){
     vol = 0;
 	system("cls");	
@@ -208,6 +209,7 @@ int main(){
     vol = 1;
 	ok = 0;
 	system("cls");
+	}
 	}
 	}while(!x);
    }while(!vol);
@@ -366,16 +368,18 @@ int main(){
     printf("\n      Qual opção você gostaria?\n\n\n\n      1.Repetir o Jogo      2.Voltar ao menu \n\n\n\n      ");  
     scanf("%d", &nex);
     while(getchar() != '\n');
-    if((nex!=1) || (nex !=2))
+    if((nex!=1) && (nex !=2)){	
 	printf("       \nInválido, digite novamente\n\n\n\n");
     x=0;
     system("pause");
+	}else{
    if(nex == 1){
 	re = 0;
 	system("cls");	
     } else if(nex == 2){
 	ok = 0;
 	system("cls");
+	}
 	} 
 	}while(!x); 
    }while(!re);
@@ -729,10 +733,11 @@ int main(){
 	printf("\n      Qual opção você gostaria?\n\n\n\n      1.Repetir o Jogo      2.Voltar ao menu \n\n\n\n      ");  
     scanf("%d", &tm);
     while(getchar() != '\n');
-    if((tm !=1) || (tm !=2))
+    if((tm !=1) && (tm !=2)){
 	printf("       Inválido, digite novamente\n\n\n\n");
-    x=0;
+	x=0;
     system("pause");
+	}else{
     if(tm == 1){
     rb = 0;
 	system("cls");	
@@ -740,6 +745,7 @@ int main(){
     rb = 1;
 	ok = 0;
 	system("cls");
+	}
 	}
    }while(!x);
    }while(!rb);
