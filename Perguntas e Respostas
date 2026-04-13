@@ -1,0 +1,195 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <string.h>
+#include <ctype.h>
+
+int main(){
+	setlocale(LC_ALL,"Portuguese_Brazil");
+	system("color 5A");
+int vol, b;
+	  vol = 1;
+	  do{
+	  char rs1[20];
+	  printf("\t\t\t\t\t\t\t\t\t\tDescrição");         
+      printf("\n\n\n\n\n\n\n                         O jogo de perguntas e respostas possui quatro alternativas para cada pergunta e apenas uma das afirmações é a correta.\n                                                     Caso você erre uma ou mais delas, poderá no final repetir as perguntas.\n\n\n\n                                                                               Prepare-se.\n\n\n\n\n                                                              ");
+	  system("pause");
+	  system("cls");       	
+	  do{
+	  b = 1;	
+	  printf("1)Qual a raíz quadrada de 2025?\n\na)45¹\nb)45\nc)45 . (senx² + cosx²)\nd)|45|\n\nRegistre a sua resposta: ");
+	  scanf("%s", rs1);      
+      while(getchar() != '\n');
+      if (strlen(rs1) > 1) {
+        system("cls");
+        printf("Inválido, digite apenas uma das letras\n\n");
+        b = 0;
+    } 
+    else {
+    	char lt = tolower(rs1[0]);
+   if(lt == 'd'){
+      printf("\nParabéns, você acertou a questão, prossiga para a próxima\n");
+      system("pause");
+	  system("cls");
+  }else if((lt == 'a') || (lt == 'b') || (lt == 'c')) {
+	  
+	  printf("\nInfelizmente você acabou errando a questão, a resposta correta é a letra d, prossiga para a próxima.\n");
+	  system("pause");
+	  system("cls");
+  }else{
+      system("cls");
+	  printf("Coloque apenas as letras das alternativas.\n\n");
+	  b = 0;
+  }
+  }	  
+  }while(!b);
+      char rs2[20];
+	  do{
+	  b = 1;			  
+   	  printf("2)Qual proteína é responsável pela quebra das pontes de hidrogênio do DNA durante sua replicação?\n\na)aminoácido\nb)topoisomerase\nc)helicase\nd)telomerase\n\nDigite sua resposta: ");
+	  scanf("%s", rs2);
+      while(getchar() != '\n');	 
+      if (strlen(rs2) > 1) {
+        system("cls");
+        printf("Inválido, digite apenas uma das letras\n\n");
+        b = 0;
+    } 
+    else {
+    	char lt = tolower(rs2[0]);
+   if (lt == 'c'){
+      
+      printf("\nParabéns, você acertou a questão, prossiga para a próxima.\n");
+      system("pause");
+	  system("cls");
+	   
+  }else if((lt == 'a') || (lt == 'b') || (lt == 'd')){
+	  
+	  printf("\nInfelizmente você acabou errando a questão, a resposta correta é a letra c, prossiga para a próxima.\n");
+	  system("pause");
+	  system("cls");
+  }else {
+	 system("cls");
+	  printf("Coloque apenas as letras das alternativas.\n\n");
+	  b = 0; 
+  }
+	}
+  }while(!b); 
+   	  
+      char rs3[20];
+	  do{
+	  b = 1;		 	  
+   	  printf("3)Qual jogo ganhou o GOTY 2013?\n\na)The Last of Us\nb)GTA V\nc)Batman Arkham City\nd)Call of Duty Black Ops 2\n\nDigite sua resposta: ");
+	  scanf("%s", rs3);
+	  while(getchar() != '\n'); 
+	  if (strlen(rs3) > 1) {
+        system("cls");
+        printf("Inválido, digite apenas uma das letras\n\n");
+        b = 0;
+    } 
+    else {
+    	char lt = tolower(rs3[0]);
+   if (lt == 'b'){
+	   
+      printf("\nParabéns, você acertou a questão, prossiga para a próxima.\n");
+      system("pause");
+	  system("cls");
+	   
+   }else if ((lt == 'a') || (lt == 'c') || (lt == 'd')){
+   	 
+	  printf("\nInfelizmente você acabou errando a questão, a resposta correta é a letra a, prossiga para a próxima\n");
+	  system("pause");
+	  system("cls");	   	   
+   }else{
+   	
+      system("cls");
+	  printf("Coloque apenas as letras das alternativas.\n\n");
+	  b = 0; 
+   }
+	}
+  }while(!b);	  
+      char rs4[20];
+      do{
+	  b = 1;	  
+   	  printf("4)Qual é o número na base 10 que equivale a FB, o qual é de base hexadecimal?\n\na)128\nb)345\nc)251\nd)250\n\nDigite sua resposta: ");
+	  scanf("%s", rs4);
+	  while(getchar() != '\n');
+	  if (strlen(rs4) > 1) {
+        system("cls");
+        printf("Inválido, digite apenas uma das letras\n\n");
+        b = 0;
+    } 
+    else {
+    	char lt = tolower(rs4[0]); 
+   if (lt == 'c'){
+	   
+      printf("\nParabéns, você acertou a questão, prossiga para a próxima\n");
+      system("pause");
+	  system("cls");
+	   
+   }else if((lt == 'a') || (lt == 'b') || (lt == 'd')){
+	   
+	  printf("\nInfelizmente você acabou errando a questão, a resposta correta é a letra c, prossiga para a próxima\n");
+	  system("pause");
+	  system("cls");	   
+   }else{
+	   system("cls");
+	  printf("Coloque apenas as letras das alternativas.\n\n");
+	  b = 0; 
+    }
+	}
+   }while(!b);
+      char rs5[20];
+	  do{	  
+      b = 1;
+   	  printf("5)Qual o único planta que rotaciona em sentido horário?\n\na)Vênus\nb)Marte\nc)Urano\nd)Júpiter\n\nDigite sua resposta: ");
+	  scanf("%s", rs5);        
+      while(getchar() != '\n');
+      if (strlen(rs5) > 1) {
+        system("cls");
+        printf("Inválido, digite apenas uma das letras\n\n");
+        b = 0;
+    } 
+    else {
+    	char lt = tolower(rs5[0]);
+   if (lt == 'a'){
+	   
+      printf("\nParabéns, você acertou a questão\n");
+      system("pause");
+	  system("cls");
+	   
+   }else if((lt == 'b') || (lt == 'c') || (lt == 'd')){
+	   
+	  printf("\nInfelizmente você acabou errando a questão, a resposta correta é a letra a\n");
+	  system("pause");
+	  system("cls");	   
+   }else {
+      system("cls");
+	  printf("Coloque apenas as letras das alternativas.\n\n");
+	  b = 0; 
+    }
+	}
+    }while(!b);  
+    int con, x;
+    do{
+    x=1;
+	system("cls");
+	printf("\n      Qual opção você gostaria?\n\n\n\n      1.Repetir o Jogo      2.Sair \n\n\n\n      ");  
+    scanf("%d", &con);
+    while(getchar() != '\n');
+    if((con !=1) && (con !=2)){
+	printf("       Inválido, digite novamente\n\n\n\n");
+    x=0;
+    system("pause");
+	}else{
+    if(con == 1){
+    vol = 0;
+	system("cls");	
+    } else if(con == 2){
+    vol = 1;
+	system("cls");
+	}
+	}
+	}while(!x);
+   }while(!vol);
+}
+    
