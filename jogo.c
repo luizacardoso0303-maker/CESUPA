@@ -1,4 +1,4 @@
-v#include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
 #include <time.h>
@@ -11,7 +11,6 @@ int main(){
    system("color 0B");
    
    int ok, esc;
-   
    do{
    ok = 1;	
    printf("Torneio Trijogo\n");
@@ -29,15 +28,14 @@ int main(){
    } 
 	
    if(esc == 1){
-      
-	  char rs1[50];
+      int vol, b;
+	  vol = 1;
+	  do{
+	  char rs1[20];
 	  printf("\t\t\t\t\t\t\t\t\t\tDescrição");         
       printf("\n\n\n\n\n\n\n                         O jogo de perguntas e respostas possui quatro alternativas para cada pergunta e apenas uma das afirmações é a correta.\n                                                     Caso você erre uma ou mais delas, poderá no final repetir as perguntas.\n\n\n\n                                                                               Prepare-se.\n\n\n\n\n                                                              ");
 	  system("pause");
-	  system("cls");       
-      int vol, b;
-      vol = 1;
-	  do{	
+	  system("cls");       	
 	  do{
 	  b = 1;	
 	  printf("1)Qual a raíz quadrada de 2025?\n\na)45¹\nb)45\nc)45 . (senx² + cosx²)\nd)|45|\n\nRegistre a sua resposta: ");
@@ -66,7 +64,7 @@ int main(){
   }
   }	  
   }while(!b);
-      char rs2[50];
+      char rs2[20];
 	  do{
 	  b = 1;			  
    	  printf("2)Qual proteína é responsável pela quebra das pontes de hidrogênio do DNA durante sua replicação?\n\na)aminoácido\nb)topoisomerase\nc)helicase\nd)telomerase\n\nDigite sua resposta: ");
@@ -98,7 +96,7 @@ int main(){
 	}
   }while(!b); 
    	  
-      char rs3[50];
+      char rs3[20];
 	  do{
 	  b = 1;		 	  
    	  printf("3)Qual jogo ganhou o GOTY 2013?\n\na)The Last of Us\nb)GTA V\nc)Batman Arkham City\nd)Call of Duty Black Ops 2\n\nDigite sua resposta: ");
@@ -130,7 +128,7 @@ int main(){
    }
 	}
   }while(!b);	  
-      char rs4[50];
+      char rs4[20];
       do{
 	  b = 1;	  
    	  printf("4)Qual é o número na base 10 que equivale a FB, o qual é de base hexadecimal?\n\na)128\nb)345\nc)251\nd)250\n\nDigite sua resposta: ");
@@ -161,7 +159,7 @@ int main(){
     }
 	}
    }while(!b);
-      char rs5[50];
+      char rs5[20];
 	  do{	  
       b = 1;
    	  printf("5)Qual o único planta que rotaciona em sentido horário?\n\na)Vênus\nb)Marte\nc)Urano\nd)Júpiter\n\nDigite sua resposta: ");
@@ -192,10 +190,17 @@ int main(){
     }
 	}
     }while(!b);  
-    int con;
+    int con, x;
+    do{
+    x=1;
+	system("cls");
 	printf("\n      Qual opção você gostaria?\n\n\n\n      1.Repetir o Jogo      2.Voltar ao menu \n\n\n\n      ");  
     scanf("%d", &con);
     while(getchar() != '\n');
+    if((con !=1) || (con !=2))
+	printf("       Inválido, digite novamente\n\n\n\n");
+    x=0;
+    system("pause");
     if(con == 1){
     vol = 0;
 	system("cls");	
@@ -204,6 +209,7 @@ int main(){
 	ok = 0;
 	system("cls");
 	}
+	}while(!x);
    }while(!vol);
     
    }
@@ -212,11 +218,11 @@ int main(){
    srand(time(NULL));
    
    if(esc == 2){	
+    do{
+   	re = 1;	
    printf("\n\n\n\n                                                                               Descrição\n\n\n\n\n\n\n             Cobra na caixa é um jogo em que dois exploradores, o explorador 1 e o explorador 2, se perdem numa tumba egípcia e se deparam com cinco caixas.\n         Em uma dessas há uma cobra e em outra há um botão, caso o explorador 1 ou vice-versa ache o botão primeiro, ele ganha, caso seja a cobra, ele perde e, \n                                  se nenhum dos dois acharem, eles continuarão à abrir as caixas até um achar o botão ou a cobra.\n\n\n\n                                                                               Prepare-se \n\n\n\n\n                                                               ");
    system("pause");
-   system("cls");
-   do{
-   	re = 1;		
+   system("cls");	
    do{
    cx1 = cx2 = cx3 = cx4 = cx5 = 0;	 	
    n = 1;	
@@ -329,7 +335,7 @@ int main(){
     if(m == cob){
     if(ji == 1){
 		printf("\n%s Perdeu! encontrou a cobra\n", ex1);
-		printf("\nO vencedor é %s\n\n", ex2);while(!re);
+		printf("\nO vencedor é %s\n\n", ex2);
 		break;
 	}else {
 		printf("\n%s Perdeu! encontrou a cobra\n", ex2);
@@ -353,12 +359,16 @@ int main(){
 	}
 	system("pause");
 	system("cls");
-	int nex;
-	system("cls");	  
-    nex = 0;
+	int nex, x;
+    do{	
+ 	x = 1;
     printf("\n      Qual opção você gostaria?\n\n\n\n      1.Repetir o Jogo      2.Voltar ao menu \n\n\n\n      ");  
     scanf("%d", &nex);
     while(getchar() != '\n');
+    if((nex!=1) || (nex !=2))
+	printf("       \nInválido, digite novamente\n\n\n\n");
+    x=0;
+    system("pause");
    if(nex == 1){
 	re = 0;
 	system("cls");	
@@ -366,13 +376,14 @@ int main(){
 	ok = 0;
 	system("cls");
 	} 
+	}while(!x); 
    }while(!re);
    }
-   
-      int esc1, esc2, c, je, jt, ac, ges, rst, gi, gos, f, tr, rb;
+
+   if(esc == 3){
+   	int esc1, esc2, c, je, jt, ac, ges, rst, gi, gos, f, tr, rb;
    char no1[20], no2[20];
    srand(time(NULL));
-   if(esc == 3){
    	do{
    	rb=1;	
    	int g[4] = {1,1,1,1};
@@ -710,11 +721,17 @@ int main(){
     if (g[0] > 5 && g[1] > 5) printf("\n\n\n\t\t\t\t\t\t\t    %s Venceu!\n\n\n\n\n\n\n", no2);
     else printf("\n\n\n\t\t\t\t\t\t\t    %s Venceu!\n\n\n\n\n\n\n", no1);
     system("pause");
-    int tm;
+    int tm, x;
+    do{
+ 	x=1;
     system("cls");
 	printf("\n      Qual opção você gostaria?\n\n\n\n      1.Repetir o Jogo      2.Voltar ao menu \n\n\n\n      ");  
     scanf("%d", &tm);
     while(getchar() != '\n');
+    if((tm !=1) || (tm !=2))
+	printf("       Inválido, digite novamente\n\n\n\n");
+    x=0;
+    system("pause");
     if(tm == 1){
     rb = 0;
 	system("cls");	
@@ -723,12 +740,12 @@ int main(){
 	ok = 0;
 	system("cls");
 	}
+   }while(!x);
    }while(!rb);
-    
    }
    }while(!ok);
-   if(esc == 4){
-	exit(0);   
+   if(esc == 4){  
+   	ok = 1;
    }
    return 0;  
 }
