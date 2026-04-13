@@ -1,0 +1,372 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <string.h>
+#include <time.h>
+
+int main(){
+	setlocale(LC_ALL,"Portuguese_Brazil");
+      int esc1, esc2, c, je, jt, ac, ges, rst, gi, gos, f, tr, rb;
+   char no1[20], no2[20];
+   srand(time(NULL));
+   	do{
+   	rb=1;	
+   	int g[4] = {1,1,1,1};
+   	 printf("\n\n\n\n                                                                                 Descrição\n\n\n\n\n\n\n ");
+    printf("                                             O Gousmas War é um jogo de estratégia em que você controla criaturas chamadas gousmas\n                   Cada gousma possui uma condição interna chamada fúria e os jogadores começam cada um com duas gousmas com 1 de fúria");
+	printf(" e um jogador vence                           quando cada uma das gousmas do adversário atingem mais de 5 fúrias. Durante o jogo o jogador possui duas opções: escolher uma de suas gousmas para           atacar uma outra do adversário, transferindo o valor de fúria da gousma atacante para o alvo, ou escolher dividir pontos de fúria de uma de suas gousmas para a outra,com possibilidade de reviver uma gousma derrotada desde que a doadora permaneça com pelo menos 1 de fúria e a transferência deve conter pelo menos 1 fúria e se a gousma                                                      receptora ficar com mais de 5 de fúria, então ela será destruída.\n\n                                                        Não pode e não deve atacar uma gousma derrotada, seu Monstro! ");
+	printf("\n                      Só ataque gousmas ativas ou reativadas e lembre-se que o jogo é por turnos e o jogador só pode executar uma das opções por turno. \n\n\n\n                                                                                 Prepare-se.\n\n\n\n\n                                                                  "); 
+	system("pause");
+	system("cls");		  
+   do{
+   c = 1;	
+   printf("Lista de Nomes:\n\n1)Vader\n2)Lynch\n3)Snake\n4)Bellatrix");
+   printf("\n\nJogador 1, escolha o personagem: ");
+   scanf("%d", &esc1);
+   while(getchar() != '\n');
+   printf("\n\nJogador 2, escolha o personagem: ");
+   scanf("%d", &esc2);
+   while(getchar() != '\n');
+   
+   switch(esc1){
+   case 1: strcpy(no1, "Vader");
+   break;
+   case 2: strcpy(no1, "Lynch");
+   break;
+   case 3: strcpy(no1, "Snake");
+   break;
+   case 4: strcpy(no1, "Bellatrix");	   
+   break;
+   default:
+   system("cls");
+   printf("opção inválida, escolha somente as opções disponíveis\n\n");
+   c = 0;
+   break;
+   }
+   switch(esc2){
+   case 1: strcpy(no2, "Vader");
+   break;
+   case 2: strcpy(no2, "Lynch");
+   break;
+   case 3: strcpy(no2, "Snake");
+   break;
+   case 4: strcpy(no2, "Bellatrix");	   
+   break;
+   default:
+   system("cls");
+   printf("opção inválida, escolha somente as opções disponíveis\n\n");
+   c = 0;
+   break;
+   }
+   if(esc1 == esc2){
+	   system("cls");
+	   printf("Opção de escolha inválida jogador 2, pois está já foi escolhida pelo jogador 1\n\n");
+       c = 0;   
+   }
+  }while(!c);
+   printf("\nJogador 1: %s\n", no1);
+   printf("Jogador 2: %s\n\n", no2);
+   printf("As atribuições jogador 1 e jogador 2 só são para as escolhas dos nomes, quem começará a batalha será decidido por sorteio\n\t\t\t\t\t\te\ncaso você transfira uma quantidade de fúria que ultrapasse a 5 na gousma receptora, ela será destruída\n\n");
+   system("Pause");
+   
+   je = rand() %2 +1;
+   if(je == 1){
+	   char ajd[20];
+	   strcpy(ajd, no1);
+       strcpy(no1, no2);
+       strcpy(no2, ajd);
+   }
+   jt = 1;
+   system("cls");
+   
+   while((g[0] <=5 || g[1] <=5) && (g[2] <=5 || g[3] <=5)){
+   do{
+   f=1;	 		
+   system("cls");	
+   if(jt == 1)printf("Turno de %s", no1);
+   else if(jt == 2)printf("Turno de %s", no2);		
+   printf("\n\n\n\t\t\t\tGousma 1: ");
+   if(g[0] > 5) printf("Morta");
+   else printf("%d", g[0]);
+
+   printf("\t\t\t\t\t\tGousma 3: ");
+   if(g[2] > 5) printf("Morta");
+   else printf("%d", g[2]);
+
+   printf("\n\n\n\t\t\t\tGousma 2: ");
+   if(g[1] > 5) printf("Morta");
+   else printf("%d", g[1]);
+
+   printf("\t\t\t\t\t\tGousma 4: ");
+   if(g[3] > 5) printf("Morta");
+   else printf("%d", g[3]);
+    printf("\nEscolha sua ação(se ela puder ser feita): \n1. atacar\n2. Dividir fúria\n\nação: ");
+   scanf("%d", &ac);
+   while(getchar() != '\n');
+   if(ac == 1){	
+   if(jt==1){			
+   printf("escolha a gousma atacante (1 ou 2): ");
+   scanf("%d", &ges);
+   while(getchar() != '\n');
+   if((ges == 1 && g[0] > 5) || (ges == 2 && g[1] > 5)){
+	   printf("Está gousma foi destroçada, escolha novamente\n");
+	   f=0;
+	   system("pause");
+	   continue;
+   }else{
+   if(ges == 1){
+	   gi = g[0];
+   }else if(ges == 2){
+	   gi = g[1];
+   }else{
+         printf("opção inválida, escolha novamente\n");
+	 f=0;
+	 system ("pause");
+	 continue;
+   }
+   }	
+   printf("escolha a gousma atacada (3 ou 4): ");
+   scanf("%d", &rst);
+   while(getchar() != '\n');
+   if((rst == 3 && g[2] > 5) || (rst == 4 && g[3] > 5)){
+	   printf("Está gousma já foi derrotada, escolha novamente\n");
+	   f=0;
+	   system("pause");
+	   continue;
+   }else
+   if(rst == 3){g[2] = g[2] + gi;}	
+   else if(rst == 4){g[3] = g[3] + gi;}
+   else{ 
+   printf("Opção inválida, escolha novamente\n");	
+   f=0;
+   system("pause");
+   }
+   }else if(jt==2){	
+	printf("escolha a gousma atacante (3 ou 4): ");
+   scanf("%d", &ges);
+   while(getchar() != '\n');
+   if((ges == 3 && g[2] > 5) || (ges == 4 && g[3] > 5)){
+	   printf("Está gousma já foi exterminada, escolha novamente\n");
+	   f=0;
+	   system("pause");
+	   continue;
+   }else
+   if(ges == 3){
+	   gi = g[2];
+   } else if(ges == 4){
+	   gi = g[3];
+   }else {
+   printf("Opção de escolha inválida, escolha novamente\n"); 
+   f=0;
+   system("pause");
+   continue;
+   }
+   printf("escolha a gousma atacada (1 ou 2): ");
+   scanf("%d", &rst);
+   while(getchar() != '\n');
+    if((rst == 1 && g[0] > 5) || (rst == 2 && g[1] > 5)){
+	   printf("Está gousma já foi destroçada, escolha novamente\n");
+	   f=0;
+	   system("pause");
+       continue;
+	}else{
+   if(rst == 1) {
+   g[0] = g[0] + gi;	
+   }else if(rst == 2){
+   g[1] = g[1] + gi;
+   }else{ 
+   printf("Opção de escolha inválida, escolha novamente\n");
+   f=0;
+   system("pause");
+   }
+	}	 
+   } 
+   if(f==1)jt = 3 - jt;
+   else f=0;
+   }else if (ac == 2){
+   	if(jt==1){
+   		if(((g[0] > 5) || (g[0] <=1)) && ((g[1] > 5) || (g[1] <=1))){
+		   printf("Nenhuma de suas gousmas pode doar fúria, você só pode atacar\n\n");
+		   f=0;
+		   system("pause");
+           continue;
+    }else{  		
+	printf("escolha a gousma doadora (1 ou 2): ");
+	scanf("%d", &gos);
+	while(getchar() != '\n');
+	if(gos == 1){
+	if((g[0] <= 1) || (g[0] > 5)){
+		printf("\nA gousma doadora escolhida é inválida, pois ela deve manter ao menos 1 de fúria ou ela for destruída\n");
+		f=0;
+		system("pause");
+        continue;
+	}else{
+		printf("Escolha o quanto de fúria você irá transferir: ");
+		scanf("%d", &tr);
+		while(getchar() != '\n');
+		if((tr < 1) || (tr >= g[0])){
+			printf("Transferência inválida, você deve doar no mnímo 1 de fúria ou um valor que não zera a gousma doadora!\n");
+			f=0;
+			system("pause");
+            continue;
+		}else{
+		if(g[1] > 5){			 
+		g[1] = 0;	
+        g[0] = g[0] - tr;
+	    g[1] = g[1] + tr;
+		     printf("\nGousma 2 revivida\n");
+		}else{
+	    g[0] = g[0] - tr;
+		g[1] = g[1] + tr;
+		}
+		}	
+	}
+	}else if(gos == 2){
+	if((g[1] <= 1) || (g[1] > 5)){
+		printf("\nA gousma doadora escolhida é inválida, pois ela deve manter ao menos 1 de fúria ou ela foi destruída\n");
+		f=0;
+		system("pause");
+        continue;
+	}else{
+		printf("Escolha o quanto de fúria você irá transferir: ");
+		scanf("%d", &tr);
+		while(getchar() != '\n');
+		if((tr < 1) || (tr >= g[1])){
+			printf("Transferência inválida, você deve doar no mnímo 1 de fúria ou um valor que não zera a gousma doadora!\n");
+			f=0;
+            system("pause");
+		}else{
+		if(g[0] > 5){
+        g[0] = 0;
+        g[1] = g[1] - tr;
+		g[0] = g[0] + tr;
+		printf("Gousma 1 revivida");
+		}else{
+	    g[1] = g[1] - tr;
+		g[0] = g[0] + tr;
+	}
+   }
+   }
+   }
+   }
+   }else if(jt==2){ 
+   	if(((g[2] > 5) || (g[2] <=1)) && ((g[3] > 5) || (g[3] <=1))){
+		   printf("Nenhuma de suas gousmas pode doar fúria, você só pode atacar\n\n");
+		   f=0;
+		   system("pause");
+           continue;
+    }else{  
+    printf("escolha a gousma doadora (3 ou 4): ");
+	scanf("%d", &gos);
+	while(getchar() != '\n');
+	if(gos == 3){
+	if((g[2] <= 1) || (g[2] > 5)){
+		printf("\nA gousma doadora escolhida é inválida, pois ela deve manter ao menos 1 de fúria ou ela foi destruída\n");
+		f=0;
+		system("pause");
+        continue;
+	}else{
+		printf("Escolha o quanto de fúria você irá transferir: ");
+		scanf("%d", &tr);
+		while(getchar() != '\n');
+		if((tr < 1) || (tr >= g[2])){
+			printf("Transferência inválida, você deve doar no mnímo 1 de fúria ou um valor que não zera a gousma doadora!\n");
+			f=0;
+			system("pause");
+            continue;
+		}else{
+		if(g[3] > 5){
+		g[3] = 0;
+        g[2] = g[2] - tr;
+		g[3] = g[3] + tr;
+		printf("Gousma 4 revivida");
+		}else{
+	    g[2] = g[2] - tr;
+		g[3] = g[3] + tr;
+		}
+		}
+	}
+	}else if(gos == 4){
+	if((g[3] <= 1) || (g[3] > 5)){
+		printf("\nA gousma doadora escolhida é inválida, pois ela deve manter ao menos 1 de fúria ou ela foi destruída\n");
+		f=0;
+		system("pause");
+        continue;
+	}else{
+		printf("Escolha o quanto de fúria você irá transferir: ");
+		scanf("%d", &tr);
+		while(getchar() != '\n');
+		if((tr < 1) || (tr >= g[3])){
+			printf("Transferência inválida, você deve doar no mnímo 1 de fúria ou um valor que não zera a gousma doadora!");
+			f=0;
+            system("pause");
+		}else{
+		if(g[2] > 5){
+		g[2] = 0;
+		g[3] = g[3] - tr;
+		g[2] = g[2] + tr;
+		printf("Gousma 3 revivida");
+		}else{
+	    g[3] = g[3] - tr;
+		g[2] = g[2] + tr;
+		}
+		}
+	}
+   }
+	}
+   }
+   if(f==1)jt = 3 - jt;
+    else f=0;
+   }else{
+	   printf("Como assim comandante? Essa escolha não existe, escolha novamente\n");
+	   f=0;
+	   system("pause");
+   }
+   }while(!f);
+}
+    system("cls");
+    printf("Fim de jogo!\n");
+    	
+   printf("\n\n\n\t\t\t\tGousma 1: ");
+   if(g[0] > 5) printf("Morta");
+   else printf("%d", g[0]);
+
+   printf("\t\t\t\t\t\tGousma 3: ");
+   if(g[2] > 5) printf("Morta");
+   else printf("%d", g[2]);
+
+   printf("\n\n\n\t\t\t\tGousma 2: ");
+   if(g[1] > 5) printf("Morta");
+   else printf("%d", g[1]);
+
+   printf("\t\t\t\t\t\tGousma 4: ");
+   if(g[3] > 5) printf("Morta");
+   else printf("%d", g[3]);
+   
+    if (g[0] > 5 && g[1] > 5) printf("\n\n\n\t\t\t\t\t\t\t    %s Venceu!\n\n\n\n\n\n\n", no2);
+    else printf("\n\n\n\t\t\t\t\t\t\t    %s Venceu!\n\n\n\n\n\n\n", no1);
+    system("pause");
+    int tm, x;
+    do{
+ 	x=1;
+    system("cls");
+	printf("\n      Qual opção você gostaria?\n\n\n\n      1.Repetir o Jogo      2.Sair \n\n\n\n      ");  
+    scanf("%d", &tm);
+    while(getchar() != '\n');
+    if((tm !=1) && (tm !=2)){
+	printf("       Inválido, digite novamente\n\n\n\n");
+	x=0;
+    system("pause");
+	}else{
+    if(tm == 1){
+    rb = 0;
+	system("cls");	
+    } else if(tm == 2){
+    rb = 1;
+	system("cls");
+	}
+	}
+   }while(!x);
+   }while(!rb);
+}
+
