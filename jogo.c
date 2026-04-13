@@ -360,7 +360,8 @@ int main(){
 	system("pause");
 	system("cls");
 	int nex, x;
-    do{	
+    do{
+	system("cls");		
  	x = 1;
     printf("\n      Qual opção você gostaria?\n\n\n\n      1.Repetir o Jogo      2.Voltar ao menu \n\n\n\n      ");  
     scanf("%d", &nex);
