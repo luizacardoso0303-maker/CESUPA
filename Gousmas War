@@ -6,6 +6,7 @@
 
 int main(){
 	setlocale(LC_ALL,"Portuguese_Brazil");
+    system("color 0E");
       int esc1, esc2, c, je, jt, ac, ges, rst, gi, gos, f, tr, rb;
    char no1[20], no2[20];
    srand(time(NULL));
