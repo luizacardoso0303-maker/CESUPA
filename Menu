@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+int main(){ 
+   
+   setlocale(LC_ALL,"Portuguese_Brazil");
+   system("color 6F");
+   
+   int ok, esc;
+   do{
+   ok = 1;	
+   printf("Torneio Trijogo\n");
+   printf("\njogos:\n\n1.Pergunta e Resposta\n2.Cobra na caixa!\n3.Gousmar War\n4.Sair\n\nDigite um número para prosseguir: ");
+   scanf("%d", &esc);
+   while(getchar() != '\n');
+   system ("cls");
+    
+   if ((esc == 1) || (esc == 2) || (esc == 3) || (esc == 4)){
+	   
+   } else {
+       
+	   printf("Acalmai participante, só podes digitar os números do menu\n\n");
+	   ok = 0;
+   }
+   if(esc==1){
+	   
+   }
+   if(esc==2){
+	   
+   }	
+   if(esc==3){
+	   
+   }	
+   if(esc==4){
+	 exit(0);  
+   }			
+   }while(!ok); 
+}
