@@ -215,11 +215,11 @@ int main(){
    }while(!vol);
     
    }
-   int ji, n, jp, re, cx1, cx2, cx3, cx4, cx5, m, esco1, esco2, bot, cob, cx;
-   char ex1[20], ex2[20];
-   srand(time(NULL));
    
    if(esc == 2){	
+   	 int ji, n, jp, re, cx1, cx2, cx3, cx4, cx5, m, esco1, esco2, bot, cob, cx;
+   char ex1[20], ex2[20];
+   srand(time(NULL));
     do{
    	re = 1;	
    printf("\n\n\n\n                                                                               Descrição\n\n\n\n\n\n\n             Cobra na caixa é um jogo em que dois exploradores, o explorador 1 e o explorador 2, se perdem numa tumba egípcia e se deparam com cinco caixas.\n         Em uma dessas há uma cobra e em outra há um botão, caso o explorador 1 ou vice-versa ache o botão primeiro, ele ganha, caso seja a cobra, ele perde e, \n                                  se nenhum dos dois acharem, eles continuarão à abrir as caixas até um achar o botão ou a cobra.\n\n\n\n                                                                               Prepare-se \n\n\n\n\n                                                               ");
@@ -300,9 +300,7 @@ int main(){
    while (bot == cob) {cob = rand() %5 + 1;}       
 	
 	while(1){
-		int es, p;
-		do{
-		p=1;	
+		int es;	
 		do{	
         es = 1;
 		if(ji == 1){printf("\nEscolha uma caixa entre 1 e 5 %s: ", ex1);}
@@ -311,14 +309,12 @@ int main(){
 	 	
 	    scanf("%d", &cx);
 	    while(getchar() != '\n');
-         m = cx - 0;
+         m = cx;
 	if(((cx == 1) && (cx1 == 1)) || ((cx == 2) && (cx2 == 1)) || ((cx == 3) && (cx3 == 1))  || ((cx == 4) && (cx4 == 1))  || ((cx == 5) && (cx5 == 1))){
 		printf("\ncaixa aberta, escolha novamente\n");
-		p = 0;
+		es = 0;
 		continue;  
 	} 
-	}while(!p);
-	
 	switch(cx){
 	case 1: cx1 = 1; 
 	break;
@@ -752,7 +748,7 @@ int main(){
    }
    }while(!ok);
    if(esc == 4){  
-   	ok = 1;
+   	exit(0);
    }
    return 0;  
 }
