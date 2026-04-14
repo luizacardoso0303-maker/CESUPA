@@ -32,11 +32,13 @@ torneio-trijogo/
 │   ├── main.c              # menu principal
 │   ├── pergunta.c         # jogo 1 (perguntas)
 │   ├── cobra.c            # jogo 2 (cobra na caixa)
-│
+│   ├── gousmas.c          # jogo 3 (gousmas war)
+|
 ├── include/
 │   ├── pergunta.h
 │   ├── cobra.h
-│
+│   ├── gousmas.h
+|  
 └── docs/
     └── explicacao.md      # (opcional: detalhes do projeto)
 ```
