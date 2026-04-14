@@ -271,7 +271,8 @@ int main(){
 		break;
 	case 7: strcpy(ex2, "Leia");
 		break;
-    default: 
+    default:
+	system("cls");	
 	printf("Opção de escolha 2 inválida\n\n");
 		n = 0;
 		break;} 
